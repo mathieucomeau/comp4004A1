@@ -11,9 +11,13 @@ import server.logic.handler.model.Output;
 public class TitleTest {
 
 	@Parameter(0)
-	public String t_ISBN_success = "66667772288554, Failing Test Case For Dummies";
+	public String t_ISBN_success = "3453453456789, Failing Test Case For Dummies";
 	@Parameter(1)	
 	public String t_ISBN_fail = "9781442616899, Dante's lyric poetry";
+	@Parameter(2)
+	public String t_ISBN_missing = "8888888888888";	//missing title
+	@Parameter(3)
+	public String t_ISBN_short = "888888888888, This ISBN is too short";	//12 numbers instead of 13
 	
 	public TitleTest()
 	{
@@ -21,27 +25,43 @@ public class TitleTest {
 	}
 	
 	@Test
-	public void testISBNExists() {
+	public void testISBNExists()
+	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("The Title Already Exists!", 2);
 		Output result = testOH.createTitle(t_ISBN_fail);
 		
 		assertEquals(expectedOut, result);
 	}
-
+	
 	@Test
-	public void testLookup() {
-		fail("Not yet implemented");
+	public void testISBNMissingInfo()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", 2);
+		Output result = testOH.createTitle(t_ISBN_missing);
+		
+		assertEquals(expectedOut, result);
 	}
-
+	
 	@Test
-	public void testDelete() {
-		fail("Not yet implemented");
+	public void testISBNTooShort()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", 2);
+		Output result = testOH.createTitle(t_ISBN_short);
+		
+		assertEquals(expectedOut, result);
 	}
-
+	
 	@Test
-	public void testGetTitleTable() {
-		fail("Not yet implemented");
+	public void testISBNAddSuccess()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Success!", 2);
+		Output result = testOH.createTitle(t_ISBN_success);
+		
+		assertEquals(expectedOut, result);
 	}
 
 }
