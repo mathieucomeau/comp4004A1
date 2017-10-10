@@ -143,10 +143,18 @@ public class FeeTable {
 			result="Borrowing Items Exist";
 			logger.info(String.format("Operation:Pay Fine;Fee Info:[%d,%d];State:Fail;Reason:Borrowing Items Exist.", i,fee));
 		}else{
-			feeList.get(index).setUserid(i);
-			feeList.get(index).setFee(0);
-			result="success";
-			logger.info(String.format("Operation:Pay Fine;Fee Info:[%d,%d];State:Success", i,fee));
+			if(fee == 0)
+			{
+				result = "No fees to pay";
+				logger.info(String.format("Operation:Pay Fine;Fee Info:[%d,%d];State:Fail;Reason:No Fees To Pay", i,fee));
+			}
+			else
+			{
+				feeList.get(index).setUserid(i);
+				feeList.get(index).setFee(0);
+				result="success";
+				logger.info(String.format("Operation:Pay Fine;Fee Info:[%d,%d];State:Success", i,fee));
+			}
 		}
 		return result;
 	}

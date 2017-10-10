@@ -2713,4 +2713,12 @@
 @2017-10-10 18:06:23 INFO  String:174 - Operation:Return Item;Loan Info:[0,9781442668584,1,2017-10-10 06:06:23];State:Success
 @2017-10-10 18:06:23 INFO  String:150 - Operation:Pay Fine;Fee Info:[0,5];State:Success
 @2017-10-10 18:06:23 INFO  String:150 - Operation:Pay Fine;Fee Info:[1,0];State:Success
+@2017-10-10 18:07:55 INFO  String:25 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-10 18:07:55 INFO  String:25 - Operation:Initialize LoanTable;LoanTable: [[0,9781442668584,1,2017-10-10 06:07:55,0]]
+@2017-10-10 18:07:55 INFO  String:98 - Operation:Apply OutStanding Fee;Fee Info:[0,0];State:Success
+@2017-10-10 18:07:55 INFO  String:122 - Operation:Initialize FeeTable;FeeTable: [[0,5]]
+@2017-10-10 18:07:55 INFO  String:144 - Operation:Pay Fine;Fee Info:[0,5];State:Fail;Reason:Borrowing Items Exist.
+@2017-10-10 18:07:55 INFO  String:174 - Operation:Return Item;Loan Info:[0,9781442668584,1,2017-10-10 06:07:55];State:Success
+@2017-10-10 18:07:55 INFO  String:156 - Operation:Pay Fine;Fee Info:[0,5];State:Success
+@2017-10-10 18:07:55 INFO  String:149 - Operation:Pay Fine;Fee Info:[1,0];State:Fail;Reason:No Fees To Pay
 @
