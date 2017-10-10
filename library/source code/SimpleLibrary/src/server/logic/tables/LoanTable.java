@@ -90,6 +90,7 @@ public class LoanTable {
 		int flag=0;
 		for(int i=0;i<loanList.size();i++){
 			int userid=(loanList.get(i)).getUserid();
+			
 			if(userid==j){
 				flag=flag+1;
 			}else{

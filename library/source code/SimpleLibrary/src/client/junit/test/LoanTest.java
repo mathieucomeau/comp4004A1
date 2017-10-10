@@ -44,6 +44,27 @@ public class LoanTest {
 	}
 	
 	@Test
+	public void testBorrowNotAvailable()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("The Item is Not Available!", OutputHandler.USER);
+		Output result = testOH.borrow(t_user_notbook);	
+		Output result2 = testOH.borrow(t_user_notbook);	
+		
+		assertEquals(expectedOut, result2);
+	}
+	
+	@Test
+	public void testBorrowAOutstandingFees()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Outstanding Fee Exists!", OutputHandler.USER);
+		Output result = testOH.borrow(t_user_borrowing);	
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
 	public void testBorrowUserNotExists()
 	{
 		OutputHandler testOH = new OutputHandler();
@@ -53,16 +74,7 @@ public class LoanTest {
 		assertEquals(expectedOut, result);
 	}
 	
-	@Test
-	public void testBorrowNotAvailable()
-	{
-		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("The Item is Not Available!", OutputHandler.USER);
-		Output preResult = testOH.borrow(t_user_borrowing);
-		Output result = testOH.borrow(t_user_notbook);	
-		
-		assertEquals(expectedOut, result);
-	}
+	
 	
 	@Test
 	public void testBorrowSuccess()
@@ -81,21 +93,26 @@ public class LoanTest {
 	public void testBorrowLimit()
 	{
 		OutputHandler testOH = new OutputHandler();
+		
+		//Output resultRet = testOH.returnBook(t_user_borrowing);
+		
 		String t_user_borrow_success1 = "sun@carleton.ca,9781442616899,1";
 		Output result = testOH.borrow(t_user_borrow_success1);
 		
 		String t_user_borrow_success2 = "sun@carleton.ca,9781442667181,1";
-		Output result1 = testOH.borrow(t_user_borrow_success2);	
-		
-		String t_user_borrow_success3 = "sun@carleton.ca,9781317594277,1";
-		Output result2 = testOH.borrow(t_user_borrow_success3);	
+		Output result1 = testOH.borrow(t_user_borrow_success2);			
 		
 		String t_user_borrow_success4 = "sun@carleton.ca,9781611687910,1";
 		Output result3 = testOH.borrow(t_user_borrow_success4);		
 		
+		String t_user_borrow_success3 = "sun@carleton.ca,9781442668584,1";
+		Output result2 = testOH.borrow(t_user_borrow_success3);	
+		
+		
+		
 		Output expectedOut = new Output("The Maximun Number of Items is Reached!", OutputHandler.USER);		
 		
-		assertEquals(expectedOut, result3);
+		assertEquals(expectedOut, result2);
 	}
 
 }
