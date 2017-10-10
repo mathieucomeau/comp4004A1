@@ -1,8 +1,10 @@
 package server.logic.handler;
 
 import java.util.Date;
+import java.util.List;
 
 import server.logic.handler.model.Output;
+import server.logic.model.Title;
 import server.logic.tables.FeeTable;
 import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
@@ -82,11 +84,22 @@ public class OutputHandler {
         }else{
         	result=ItemTable.getInstance().createitem(strArray[0]);
         	if(result.equals(true)){
-        		output.setOutput("Success!");
+        		List<Title> tList = TitleTable.getInstance().getTitleTable();
+        		String title = new String();
+        		for(int i = 0; i < tList.size(); i++)
+        		{
+        			if(tList.get(i).getISBN().equals(input))
+        			{
+        				title = tList.get(i).getBooktitle();
+        			}
+        		}
+        		output.setOutput(title);
+        		output.setState(CLERK);
         	}else{
         		output.setOutput("The Title Does Not Exists!");
+        		output.setState(CREATETITLE);
         	}
-        	output.setState(CLERK);
+        	
         }
 		return output;
 	}

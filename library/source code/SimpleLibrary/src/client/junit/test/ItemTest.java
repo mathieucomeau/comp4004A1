@@ -23,7 +23,7 @@ public class ItemTest {
 	@Test
 	public void testISBNExists() {
 		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("Success!", 2);
+		Output expectedOut = new Output("Courtesy lost", OutputHandler.CLERK);
 		Output result = testOH.createItem(t_ISBN_exists);
 		
 		assertEquals(expectedOut, result);
@@ -33,7 +33,7 @@ public class ItemTest {
 	public void testISBNInvalid()
 	{
 		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("Your input should in this format:'ISBN',ISBN should be a 13-digit number", 6);
+		Output expectedOut = new Output("Your input should in this format:'ISBN',ISBN should be a 13-digit number", OutputHandler.CREATEITEM);
 		Output result = testOH.createItem(t_ISBN_invalid);
 		
 		assertEquals(expectedOut, result);
@@ -43,7 +43,7 @@ public class ItemTest {
 	public void testISBNNotExists()
 	{
 		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("The Title Does Not Exists!", 5);
+		Output expectedOut = new Output("The Title Does Not Exists!", OutputHandler.CREATETITLE);
 		Output result = testOH.createItem(t_ISBN_notexist);
 		
 		assertEquals(expectedOut, result);

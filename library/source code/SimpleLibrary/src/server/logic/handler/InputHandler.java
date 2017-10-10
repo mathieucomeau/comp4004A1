@@ -176,7 +176,7 @@ public class InputHandler {
 	                state = CLERK;
 	                oo.setOutput(output);
 		            oo.setState(state);
-	        	}else{
+	        	}else{	        		
 	        		o=outputHandler.createTitle(input);
 	        		output=o.getOutput();
 	        		state=o.getState();

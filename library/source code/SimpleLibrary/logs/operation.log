@@ -2249,4 +2249,215 @@
 @2017-10-10 14:34:16 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
 @2017-10-10 14:34:16 INFO  String:47 - Operation:Create New Item;Item Info:[5558558558543,N/A];State:Fail;Reason:No such ISBN existed.
 @2017-10-10 14:34:16 INFO  String:44 - Operation:Create New Item;Item Info:[9781442667181,2];State:Success
+@2017-10-10 14:35:46 INFO  String:25 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1]]
+@2017-10-10 14:35:46 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 14:35:46 INFO  String:47 - Operation:Create New Item;Item Info:[5558558558543,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:35:46 INFO  String:44 - Operation:Create New Item;Item Info:[9781442667181,2];State:Success
+@2017-10-10 14:36:18 INFO  LibClient:31 - 58000 : Connected to server: /127.0.0.1
+@2017-10-10 14:36:18 INFO  LibClient:32 - 58000 : Connected to portid: 58000
+@2017-10-10 14:36:18 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:58000] Client Socket: [58000 ]
+
+@2017-10-10 14:36:18 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 14:36:18 INFO  ServerThread:53 - Class: ServerThread: Server Thread Running__58000
+@2017-10-10 14:36:21 INFO  LibServer:102 - Input from 127.0.0.1:58000 
+@2017-10-10 14:36:21 INFO  LibServer:119 - Output to 127.0.0.1:58000 Who Are you?Clerk or User?
+
+@2017-10-10 14:36:24 INFO  LibServer:102 - Input from 127.0.0.1:58000 Clerk
+@2017-10-10 14:36:24 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please Input The Password:
+
+@2017-10-10 14:36:29 INFO  LibServer:102 - Input from 127.0.0.1:58000 admin
+@2017-10-10 14:36:29 INFO  LibServer:111 - Output to 127.0.0.1:58000 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:36:34 INFO  LibServer:102 - Input from 127.0.0.1:58000 create item
+@2017-10-10 14:36:34 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please Input Item Info:'ISBN'
+
+@2017-10-10 14:36:49 INFO  LibServer:102 - Input from 127.0.0.1:58000 2224446668889
+@2017-10-10 14:36:49 INFO  String:47 - Operation:Create New Item;Item Info:[2224446668889,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:36:49 INFO  LibServer:111 - Output to 127.0.0.1:58000 The Title Does Not Exists!
+
+@2017-10-10 14:36:51 INFO  LibServer:102 - Input from 127.0.0.1:58000 
+@2017-10-10 14:36:51 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:37:12 INFO  LibServer:102 - Input from 127.0.0.1:58000 create item
+@2017-10-10 14:37:12 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please Input Item Info:'ISBN'
+
+@2017-10-10 14:37:17 INFO  LibServer:102 - Input from 127.0.0.1:58000 2224446668889
+@2017-10-10 14:37:17 INFO  String:47 - Operation:Create New Item;Item Info:[2224446668889,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:37:17 INFO  LibServer:111 - Output to 127.0.0.1:58000 The Title Does Not Exists!
+
+@2017-10-10 14:37:22 INFO  LibServer:102 - Input from 127.0.0.1:58000 Title
+@2017-10-10 14:37:22 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:37:27 INFO  LibServer:102 - Input from 127.0.0.1:58000 create item
+@2017-10-10 14:37:27 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please Input Item Info:'ISBN'
+
+@2017-10-10 14:37:30 INFO  LibServer:102 - Input from 127.0.0.1:58000 2224446668889
+@2017-10-10 14:37:30 INFO  String:47 - Operation:Create New Item;Item Info:[2224446668889,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:37:30 INFO  LibServer:111 - Output to 127.0.0.1:58000 The Title Does Not Exists!
+
+@2017-10-10 14:37:51 INFO  LibServer:102 - Input from 127.0.0.1:58000 
+@2017-10-10 14:37:51 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:37:59 INFO  LibServer:102 - Input from 127.0.0.1:58000 create item
+@2017-10-10 14:37:59 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please Input Item Info:'ISBN'
+
+@2017-10-10 14:38:00 INFO  LibServer:102 - Input from 127.0.0.1:58000 123
+@2017-10-10 14:38:00 INFO  LibServer:111 - Output to 127.0.0.1:58000 Your input should in this format:'ISBN',ISBN should be a 13-digit number
+
+@2017-10-10 14:38:09 INFO  LibServer:102 - Input from 127.0.0.1:58000 2224446668889
+@2017-10-10 14:38:09 INFO  String:47 - Operation:Create New Item;Item Info:[2224446668889,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:38:09 INFO  LibServer:111 - Output to 127.0.0.1:58000 The Title Does Not Exists!
+
+@2017-10-10 14:38:28 INFO  LibServer:102 - Input from 127.0.0.1:58000 Title Exists
+@2017-10-10 14:38:28 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:38:33 INFO  LibServer:102 - Input from 127.0.0.1:58000 create title
+@2017-10-10 14:38:33 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please Input Title Info:'ISBN,title'
+
+@2017-10-10 14:38:38 INFO  LibServer:102 - Input from 127.0.0.1:58000 2224446668889, Title Exists
+@2017-10-10 14:38:38 INFO  String:42 - Operation:Create New Title;Title Info:[2224446668889, Title Exists];State:Success
+@2017-10-10 14:38:38 INFO  LibServer:111 - Output to 127.0.0.1:58000 Success!
+
+@2017-10-10 14:38:40 INFO  LibServer:102 - Input from 127.0.0.1:58000 
+@2017-10-10 14:38:40 INFO  LibServer:111 - Output to 127.0.0.1:58000 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:38:43 INFO  ServerThread:60 - Class: ServerThread: Exception thrown : Connection reset 
+
+@2017-10-10 14:40:00 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:58046] Client Socket: [58046 ]
+
+@2017-10-10 14:40:00 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 14:40:00 INFO  ServerThread:53 - Class: ServerThread: Server Thread Running__58046
+@2017-10-10 14:40:00 INFO  LibClient:31 - 58046 : Connected to server: /127.0.0.1
+@2017-10-10 14:40:00 INFO  LibClient:32 - 58046 : Connected to portid: 58046
+@2017-10-10 14:40:04 INFO  LibServer:102 - Input from 127.0.0.1:58046 
+@2017-10-10 14:40:04 INFO  LibServer:119 - Output to 127.0.0.1:58046 Who Are you?Clerk or User?
+
+@2017-10-10 14:40:06 INFO  LibServer:102 - Input from 127.0.0.1:58046 Clerk
+@2017-10-10 14:40:06 INFO  LibServer:111 - Output to 127.0.0.1:58046 Please Input The Password:
+
+@2017-10-10 14:40:07 INFO  LibServer:102 - Input from 127.0.0.1:58046 admin
+@2017-10-10 14:40:07 INFO  LibServer:111 - Output to 127.0.0.1:58046 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:40:11 INFO  LibServer:102 - Input from 127.0.0.1:58046 create item
+@2017-10-10 14:40:11 INFO  LibServer:111 - Output to 127.0.0.1:58046 Please Input Item Info:'ISBN'
+
+@2017-10-10 14:40:24 INFO  LibServer:102 - Input from 127.0.0.1:58046 77445522387
+@2017-10-10 14:40:24 INFO  LibServer:111 - Output to 127.0.0.1:58046 Your input should in this format:'ISBN',ISBN should be a 13-digit number
+
+@2017-10-10 14:40:33 INFO  LibServer:102 - Input from 127.0.0.1:58046 7744552264578
+@2017-10-10 14:40:33 INFO  String:47 - Operation:Create New Item;Item Info:[7744552264578,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:40:33 INFO  LibServer:111 - Output to 127.0.0.1:58046 The Title Does Not Exists!
+
+@2017-10-10 14:40:48 INFO  LibServer:102 - Input from 127.0.0.1:58046 7744552264578, Title Now Exist
+@2017-10-10 14:40:48 INFO  LibServer:111 - Output to 127.0.0.1:58046 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:40:52 INFO  LibServer:102 - Input from 127.0.0.1:58046 create title
+@2017-10-10 14:40:52 INFO  LibServer:111 - Output to 127.0.0.1:58046 Please Input Title Info:'ISBN,title'
+
+@2017-10-10 14:40:57 INFO  LibServer:102 - Input from 127.0.0.1:58046 7744552264578, Title Now Exist
+@2017-10-10 14:40:57 INFO  String:42 - Operation:Create New Title;Title Info:[7744552264578, Title Now Exist];State:Success
+@2017-10-10 14:40:57 INFO  LibServer:111 - Output to 127.0.0.1:58046 Success!
+
+@2017-10-10 14:40:59 INFO  LibServer:102 - Input from 127.0.0.1:58046 
+@2017-10-10 14:40:59 INFO  LibServer:111 - Output to 127.0.0.1:58046 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:41:03 INFO  ServerThread:60 - Class: ServerThread: Exception thrown : Connection reset 
+
+@2017-10-10 14:46:53 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:58137] Client Socket: [58137 ]
+
+@2017-10-10 14:46:53 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 14:46:53 INFO  ServerThread:53 - Class: ServerThread: Server Thread Running__58137
+@2017-10-10 14:46:53 INFO  LibClient:31 - 58137 : Connected to server: /127.0.0.1
+@2017-10-10 14:46:53 INFO  LibClient:32 - 58137 : Connected to portid: 58137
+@2017-10-10 14:46:55 INFO  LibServer:102 - Input from 127.0.0.1:58137 
+@2017-10-10 14:46:55 INFO  LibServer:119 - Output to 127.0.0.1:58137 Who Are you?Clerk or User?
+
+@2017-10-10 14:46:57 INFO  LibServer:102 - Input from 127.0.0.1:58137 Clerk
+@2017-10-10 14:46:57 INFO  LibServer:111 - Output to 127.0.0.1:58137 Please Input The Password:
+
+@2017-10-10 14:46:59 INFO  LibServer:102 - Input from 127.0.0.1:58137 admin
+@2017-10-10 14:46:59 INFO  LibServer:111 - Output to 127.0.0.1:58137 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:47:02 INFO  LibServer:102 - Input from 127.0.0.1:58137 create item
+@2017-10-10 14:47:02 INFO  LibServer:111 - Output to 127.0.0.1:58137 Please Input Item Info:'ISBN'
+
+@2017-10-10 14:47:10 INFO  LibServer:102 - Input from 127.0.0.1:58137 1313131313131
+@2017-10-10 14:47:10 INFO  String:47 - Operation:Create New Item;Item Info:[1313131313131,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:47:10 INFO  LibServer:111 - Output to 127.0.0.1:58137 The Title Does Not Exists!
+
+@2017-10-10 14:47:22 INFO  LibServer:102 - Input from 127.0.0.1:58137 
+@2017-10-10 14:47:22 INFO  LibServer:111 - Output to 127.0.0.1:58137 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:47:33 INFO  ServerThread:60 - Class: ServerThread: Exception thrown : Connection reset 
+
+@2017-10-10 14:49:57 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:58178] Client Socket: [58178 ]
+
+@2017-10-10 14:49:57 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 14:49:57 INFO  ServerThread:53 - Class: ServerThread: Server Thread Running__58178
+@2017-10-10 14:49:57 INFO  LibClient:31 - 58178 : Connected to server: /127.0.0.1
+@2017-10-10 14:49:57 INFO  LibClient:32 - 58178 : Connected to portid: 58178
+@2017-10-10 14:49:58 INFO  LibServer:102 - Input from 127.0.0.1:58178 
+@2017-10-10 14:49:58 INFO  LibServer:119 - Output to 127.0.0.1:58178 Who Are you?Clerk or User?
+
+@2017-10-10 14:50:00 INFO  LibServer:102 - Input from 127.0.0.1:58178 Clerk
+@2017-10-10 14:50:00 INFO  LibServer:111 - Output to 127.0.0.1:58178 Please Input The Password:
+
+@2017-10-10 14:50:02 INFO  LibServer:102 - Input from 127.0.0.1:58178 admin
+@2017-10-10 14:50:02 INFO  LibServer:111 - Output to 127.0.0.1:58178 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:50:05 INFO  LibServer:102 - Input from 127.0.0.1:58178 create item
+@2017-10-10 14:50:05 INFO  LibServer:111 - Output to 127.0.0.1:58178 Please Input Item Info:'ISBN'
+
+@2017-10-10 14:50:13 INFO  LibServer:102 - Input from 127.0.0.1:58178 1313131313131
+@2017-10-10 14:50:13 INFO  String:47 - Operation:Create New Item;Item Info:[1313131313131,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:50:13 INFO  LibServer:111 - Output to 127.0.0.1:58178 The Title Does Not Exists!
+
+@2017-10-10 14:50:27 INFO  LibServer:102 - Input from 127.0.0.1:58178 
+@2017-10-10 14:50:27 INFO  LibServer:111 - Output to 127.0.0.1:58178 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 14:50:35 INFO  ServerThread:60 - Class: ServerThread: Exception thrown : Connection reset 
+
+@2017-10-10 14:57:17 INFO  String:25 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1]]
+@2017-10-10 14:57:17 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 14:57:17 INFO  String:47 - Operation:Create New Item;Item Info:[5558558558543,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:57:17 INFO  String:44 - Operation:Create New Item;Item Info:[9781442667181,2];State:Success
+@2017-10-10 14:59:50 INFO  String:25 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1]]
+@2017-10-10 14:59:50 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 14:59:50 INFO  String:47 - Operation:Create New Item;Item Info:[5558558558543,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 14:59:50 INFO  String:44 - Operation:Create New Item;Item Info:[9781442667181,2];State:Success
+@2017-10-10 14:59:58 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:58320] Client Socket: [58320 ]
+
+@2017-10-10 14:59:58 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 14:59:58 INFO  ServerThread:53 - Class: ServerThread: Server Thread Running__58320
+@2017-10-10 14:59:58 INFO  LibClient:31 - 58320 : Connected to server: /127.0.0.1
+@2017-10-10 14:59:58 INFO  LibClient:32 - 58320 : Connected to portid: 58320
+@2017-10-10 15:00:00 INFO  LibServer:102 - Input from 127.0.0.1:58320 
+@2017-10-10 15:00:00 INFO  LibServer:119 - Output to 127.0.0.1:58320 Who Are you?Clerk or User?
+
+@2017-10-10 15:00:01 INFO  LibServer:102 - Input from 127.0.0.1:58320 Clerk
+@2017-10-10 15:00:01 INFO  LibServer:111 - Output to 127.0.0.1:58320 Please Input The Password:
+
+@2017-10-10 15:00:03 INFO  LibServer:102 - Input from 127.0.0.1:58320 admin
+@2017-10-10 15:00:03 INFO  LibServer:111 - Output to 127.0.0.1:58320 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 15:00:06 INFO  LibServer:102 - Input from 127.0.0.1:58320 Create ITem
+@2017-10-10 15:00:06 INFO  LibServer:111 - Output to 127.0.0.1:58320 Please Input Item Info:'ISBN'
+
+@2017-10-10 15:00:13 INFO  LibServer:102 - Input from 127.0.0.1:58320 3434343434343
+@2017-10-10 15:00:13 INFO  String:47 - Operation:Create New Item;Item Info:[3434343434343,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 15:00:13 INFO  LibServer:111 - Output to 127.0.0.1:58320 The Title Does Not Exists!
+
+@2017-10-10 15:00:35 INFO  LibServer:102 - Input from 127.0.0.1:58320 3434
+@2017-10-10 15:00:35 INFO  LibServer:111 - Output to 127.0.0.1:58320 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 15:00:46 INFO  ServerThread:60 - Class: ServerThread: Exception thrown : Connection reset 
+
+@2017-10-10 15:09:24 INFO  String:25 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1]]
+@2017-10-10 15:09:24 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 15:09:24 INFO  String:47 - Operation:Create New Item;Item Info:[5558558558543,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 15:09:24 INFO  String:44 - Operation:Create New Item;Item Info:[9781442667181,2];State:Success
+@2017-10-10 15:12:07 INFO  String:25 - Operation:Initialize ItemTable;ItemTable: [[0,9781442668584,1], [1,9781442616899,1], [2,9781442667181,1], [3,9781611687910,1]]
+@2017-10-10 15:12:07 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 15:12:07 INFO  String:47 - Operation:Create New Item;Item Info:[5558558558543,N/A];State:Fail;Reason:No such ISBN existed.
+@2017-10-10 15:12:07 INFO  String:44 - Operation:Create New Item;Item Info:[9781442667181,2];State:Success
 @
