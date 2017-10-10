@@ -28,7 +28,7 @@ public class TitleTest {
 	public void testISBNExists()
 	{
 		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("The Title Already Exists!", 2);
+		Output expectedOut = new Output("The Title Already Exists!", OutputHandler.CLERK);
 		Output result = testOH.createTitle(t_ISBN_fail);
 		
 		assertEquals(expectedOut, result);
@@ -38,7 +38,7 @@ public class TitleTest {
 	public void testISBNMissingInfo()
 	{
 		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", 5);
+		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", OutputHandler.CREATETITLE);
 		Output result = testOH.createTitle(t_ISBN_missing);
 		
 		assertEquals(expectedOut, result);
@@ -48,7 +48,7 @@ public class TitleTest {
 	public void testISBNTooShort()
 	{
 		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", 5);
+		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", OutputHandler.CREATETITLE);
 		Output result = testOH.createTitle(t_ISBN_short);
 		
 		assertEquals(expectedOut, result);
@@ -58,7 +58,7 @@ public class TitleTest {
 	public void testISBNAddSuccess()
 	{
 		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("Success!", 2);
+		Output expectedOut = new Output("Success!", OutputHandler.CLERK);
 		Output result = testOH.createTitle(t_ISBN_success);
 		
 		assertEquals(expectedOut, result);

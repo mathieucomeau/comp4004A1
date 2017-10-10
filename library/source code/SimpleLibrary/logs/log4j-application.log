@@ -2456,4 +2456,79 @@
 @2017-10-10 15:12:07 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
 @2017-10-10 15:12:07 INFO  String:47 - Operation:Create New Item;Item Info:[5558558558543,N/A];State:Fail;Reason:No such ISBN existed.
 @2017-10-10 15:12:07 INFO  String:44 - Operation:Create New Item;Item Info:[9781442667181,2];State:Success
+@2017-10-10 15:31:28 INFO  String:25 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-10 15:31:28 INFO  String:44 - Operation:Create New User;User Info:[mathieu@carleton.ca, mathieu];State:Success
+@2017-10-10 15:31:28 INFO  String:47 - Operation:Create New User;User Info:[zhibo@carleton.ca, zhibo];State:Fail;Reason:The User already existed.
+@2017-10-10 15:35:40 INFO  LibClient:31 - 58789 : Connected to server: /127.0.0.1
+@2017-10-10 15:35:40 INFO  LibClient:32 - 58789 : Connected to portid: 58789
+@2017-10-10 15:35:40 INFO  LibServer:72 - Client accepted : Client Address : [/127.0.0.1:58789] Client Socket: [58789 ]
+
+@2017-10-10 15:35:40 INFO  LibServer:63 - Waiting for a client ...
+@2017-10-10 15:35:40 INFO  ServerThread:53 - Class: ServerThread: Server Thread Running__58789
+@2017-10-10 15:35:42 INFO  LibServer:102 - Input from 127.0.0.1:58789 
+@2017-10-10 15:35:42 INFO  LibServer:119 - Output to 127.0.0.1:58789 Who Are you?Clerk or User?
+
+@2017-10-10 15:35:45 INFO  LibServer:102 - Input from 127.0.0.1:58789 Clerk
+@2017-10-10 15:35:45 INFO  LibServer:111 - Output to 127.0.0.1:58789 Please Input The Password:
+
+@2017-10-10 15:35:47 INFO  LibServer:102 - Input from 127.0.0.1:58789 admin
+@2017-10-10 15:35:47 INFO  LibServer:111 - Output to 127.0.0.1:58789 What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 15:35:51 INFO  LibServer:102 - Input from 127.0.0.1:58789 Create User
+@2017-10-10 15:35:51 INFO  LibServer:111 - Output to 127.0.0.1:58789 Please Input User Info:'username,password'
+
+@2017-10-10 15:36:02 INFO  LibServer:102 - Input from 127.0.0.1:58789 john@sample.email, john
+@2017-10-10 15:36:02 INFO  String:44 - Operation:Create New User;User Info:[john@sample.email, john];State:Success
+@2017-10-10 15:36:02 INFO  LibServer:111 - Output to 127.0.0.1:58789 Success!
+
+@2017-10-10 15:36:05 INFO  LibServer:102 - Input from 127.0.0.1:58789 
+@2017-10-10 15:36:05 INFO  LibServer:111 - Output to 127.0.0.1:58789 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 15:36:08 INFO  LibServer:102 - Input from 127.0.0.1:58789 Crate User
+@2017-10-10 15:36:08 INFO  LibServer:111 - Output to 127.0.0.1:58789 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 15:36:15 INFO  LibServer:102 - Input from 127.0.0.1:58789 Create User
+@2017-10-10 15:36:15 INFO  LibServer:111 - Output to 127.0.0.1:58789 Please Input User Info:'username,password'
+
+@2017-10-10 15:36:23 INFO  LibServer:102 - Input from 127.0.0.1:58789 john@sample.email, john
+@2017-10-10 15:36:23 INFO  String:47 - Operation:Create New User;User Info:[john@sample.email, john];State:Fail;Reason:The User already existed.
+@2017-10-10 15:36:23 INFO  LibServer:111 - Output to 127.0.0.1:58789 The User Already Exists!
+
+@2017-10-10 15:36:24 INFO  LibServer:102 - Input from 127.0.0.1:58789 
+@2017-10-10 15:36:24 INFO  LibServer:111 - Output to 127.0.0.1:58789 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 15:36:31 INFO  LibServer:102 - Input from 127.0.0.1:58789 create user
+@2017-10-10 15:36:31 INFO  LibServer:111 - Output to 127.0.0.1:58789 Please Input User Info:'username,password'
+
+@2017-10-10 15:36:37 INFO  LibServer:102 - Input from 127.0.0.1:58789 zhibo@carleton.ca, zhibo
+@2017-10-10 15:36:37 INFO  String:47 - Operation:Create New User;User Info:[zhibo@carleton.ca, zhibo];State:Fail;Reason:The User already existed.
+@2017-10-10 15:36:37 INFO  LibServer:111 - Output to 127.0.0.1:58789 The User Already Exists!
+
+@2017-10-10 15:36:38 INFO  LibServer:102 - Input from 127.0.0.1:58789 
+@2017-10-10 15:36:38 INFO  LibServer:111 - Output to 127.0.0.1:58789 Please select from the menu.Menu:Create User/Title/Item,Delete User/Title/Item.
+
+@2017-10-10 15:36:41 INFO  LibServer:102 - Input from 127.0.0.1:58789 create user
+@2017-10-10 15:36:41 INFO  LibServer:111 - Output to 127.0.0.1:58789 Please Input User Info:'username,password'
+
+@2017-10-10 15:36:48 INFO  LibServer:102 - Input from 127.0.0.1:58789 invalid, invalid
+@2017-10-10 15:36:48 INFO  LibServer:111 - Output to 127.0.0.1:58789 Your input should in this format:'username,password'
+
+@2017-10-10 15:36:54 INFO  LibServer:102 - Input from 127.0.0.1:58789 invalid@email.com
+@2017-10-10 15:36:54 INFO  LibServer:111 - Output to 127.0.0.1:58789 Your input should in this format:'username,password'
+
+@2017-10-10 15:37:01 INFO  LibServer:102 - Input from 127.0.0.1:58789 invalid@email.com, invalid
+@2017-10-10 15:37:01 INFO  String:44 - Operation:Create New User;User Info:[invalid@email.com, invalid];State:Success
+@2017-10-10 15:37:01 INFO  LibServer:111 - Output to 127.0.0.1:58789 Success!
+
+@2017-10-10 15:37:10 INFO  ServerThread:60 - Class: ServerThread: Exception thrown : Connection reset 
+
+@2017-10-10 15:44:33 INFO  String:25 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-10 15:44:33 INFO  String:44 - Operation:Create New User;User Info:[mathieu@carleton.ca, mathieu];State:Success
+@2017-10-10 15:44:33 INFO  String:47 - Operation:Create New User;User Info:[zhibo@carleton.ca, zhibo];State:Fail;Reason:The User already existed.
+@2017-10-10 15:49:23 INFO  String:25 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-10 15:49:23 INFO  String:44 - Operation:Create New User;User Info:[mathieu@carleton.ca, mathieu];State:Success
+@2017-10-10 15:49:23 INFO  String:47 - Operation:Create New User;User Info:[zhibo@carleton.ca, zhibo];State:Fail;Reason:The User already existed.
+@2017-10-10 15:50:00 INFO  String:25 - Operation:Initialize UserTable;UserTable: [[0,Zhibo@carleton.ca,Zhibo], [1,Yu@carleton.ca,Yu], [2,Michelle@carleton.ca,Michelle], [3,Kevin@carleton.ca,Kevin], [4,Sun@carleton.ca,Sun]]
+@2017-10-10 15:50:00 INFO  String:44 - Operation:Create New User;User Info:[mathieu@carleton.ca, mathieu];State:Success
+@2017-10-10 15:50:00 INFO  String:47 - Operation:Create New User;User Info:[zhibo@carleton.ca, zhibo];State:Fail;Reason:The User already existed.
 @
