@@ -1,0 +1,1 @@
+INDEX VERSION 1.130+C:\Users\Mathieu\Documents\School\COMP 4004\code for simple library system\library (stripped of test cases)\source code\comp4004A1\SimpleLibrary\.metadata\.plugins\org.eclipse.jdt.core
