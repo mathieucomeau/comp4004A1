@@ -2219,4 +2219,19 @@
 @2017-10-10 14:05:20 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
 @2017-10-10 14:05:20 INFO  String:42 - Operation:Create New Title;Title Info:[3453453456789, Failing Test Case For Dummies];State:Success
 @2017-10-10 14:05:20 INFO  String:45 - Operation:Create New Title;Title Info:[9781442616899, Dante's lyric poetry];State:Fail;Reason:The ISBN already existed.
+@2017-10-10 14:13:30 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 14:13:30 INFO  String:42 - Operation:Create New Title;Title Info:[3453453456789, Failing Test Case For Dummies];State:Success
+@2017-10-10 14:13:30 INFO  String:45 - Operation:Create New Title;Title Info:[9781442616899, Dante's lyric poetry];State:Fail;Reason:The ISBN already existed.
+@2017-10-10 14:15:00 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 14:15:00 INFO  String:42 - Operation:Create New Title;Title Info:[3453453456789, Failing Test Case For Dummies];State:Success
+@2017-10-10 14:15:00 INFO  String:45 - Operation:Create New Title;Title Info:[9781442616899, Dante's lyric poetry];State:Fail;Reason:The ISBN already existed.
+@2017-10-10 14:15:20 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 14:15:20 INFO  String:42 - Operation:Create New Title;Title Info:[3453453456789, Failing Test Case For Dummies];State:Success
+@2017-10-10 14:15:20 INFO  String:45 - Operation:Create New Title;Title Info:[9781442616899, Dante's lyric poetry];State:Fail;Reason:The ISBN already existed.
+@2017-10-10 14:15:53 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 14:15:53 INFO  String:42 - Operation:Create New Title;Title Info:[3453453456789, Failing Test Case For Dummies];State:Success
+@2017-10-10 14:15:53 INFO  String:45 - Operation:Create New Title;Title Info:[9781442616899, Dante's lyric poetry];State:Fail;Reason:The ISBN already existed.
+@2017-10-10 14:16:05 INFO  String:23 - Operation:Initialize TitleTable;TitleTable: [[9781442668584,By the grace of God], [9781442616899,Dante's lyric poetry ], [9781442667181,Courtesy lost], [9781611687910,Writing for justice], [9781317594277,The act in context]]
+@2017-10-10 14:16:05 INFO  String:42 - Operation:Create New Title;Title Info:[3453453456789, Failing Test Case For Dummies];State:Success
+@2017-10-10 14:16:05 INFO  String:45 - Operation:Create New Title;Title Info:[9781442616899, Dante's lyric poetry];State:Fail;Reason:The ISBN already existed.
 @

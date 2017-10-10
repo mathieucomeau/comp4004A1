@@ -38,7 +38,7 @@ public class TitleTest {
 	public void testISBNMissingInfo()
 	{
 		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", 2);
+		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", 5);
 		Output result = testOH.createTitle(t_ISBN_missing);
 		
 		assertEquals(expectedOut, result);
@@ -48,7 +48,7 @@ public class TitleTest {
 	public void testISBNTooShort()
 	{
 		OutputHandler testOH = new OutputHandler();
-		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", 2);
+		Output expectedOut = new Output("Your input should in this format:'ISBN,title',ISBN should be a 13-digit number", 5);
 		Output result = testOH.createTitle(t_ISBN_short);
 		
 		assertEquals(expectedOut, result);

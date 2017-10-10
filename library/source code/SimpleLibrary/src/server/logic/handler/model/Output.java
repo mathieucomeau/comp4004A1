@@ -29,6 +29,13 @@ public class Output {
 	public void setState(int state) {
 		this.state = state;
 	}
+	
+	@Override
+	public boolean equals(Object other)
+	{
+		Output otherOut = (Output) other;
+		return (this.output.equals(otherOut.output) && this.state == otherOut.state);
+	}
 
 	
 	
