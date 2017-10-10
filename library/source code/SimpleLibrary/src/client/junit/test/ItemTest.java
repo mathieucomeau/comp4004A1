@@ -19,6 +19,9 @@ public class ItemTest {
 	@Parameter(2)
 	public String t_ISBN_notexist = "5558558558543";	//does not exist
 	
+	@Parameter(3)
+	public String t_ISBN_loaned = "9781442668584";		//loaned by Zhibo
+	
 	
 	@Test
 	public void testISBNExists() {
@@ -45,6 +48,36 @@ public class ItemTest {
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("The Title Does Not Exists!", OutputHandler.CREATETITLE);
 		Output result = testOH.createItem(t_ISBN_notexist);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testRemoveNonExistant()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("The Item Does Not Exist!", OutputHandler.CLERK);
+		Output result = testOH.createItem(t_ISBN_notexist);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testRemoveLoaned()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Active Loan Exists!", OutputHandler.CLERK);
+		Output result = testOH.createItem(t_ISBN_loaned);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testRemoveSuccessful()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Success!", OutputHandler.CLERK);
+		Output result = testOH.createItem(t_ISBN_loaned);
 		
 		assertEquals(expectedOut, result);
 	}
