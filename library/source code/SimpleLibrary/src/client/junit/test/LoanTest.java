@@ -114,5 +114,82 @@ public class LoanTest {
 		
 		assertEquals(expectedOut, result2);
 	}
+	
+	@Test
+	public void testRenewLoanNotExist()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("The loan does not exist!", OutputHandler.USER);
+		Output result = testOH.renew(t_user_noloan);		
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testRenewBookLimit()
+	{
+		OutputHandler testOH = new OutputHandler();
+		
+		//Output resultRet = testOH.returnBook(t_user_borrowing);
+		
+		String t_user_borrow_success1 = "sun@carleton.ca,9781442616899,1";
+		Output result = testOH.borrow(t_user_borrow_success1);
+		
+		String t_user_borrow_success2 = "sun@carleton.ca,9781442667181,1";
+		Output result1 = testOH.borrow(t_user_borrow_success2);			
+		
+		String t_user_borrow_success4 = "sun@carleton.ca,9781611687910,1";
+		Output result3 = testOH.borrow(t_user_borrow_success4);		
+		
+		String t_user_borrow_success3 = "sun@carleton.ca,9781442668584,1";
+		Output result2 = testOH.borrow(t_user_borrow_success3);	
+		
+		String t_user_borrow_success5 = "sun@carleton.ca,9781611687910,1";
+		Output result5 = testOH.renew(t_user_borrow_success4);				
+		
+		
+		Output expectedOut = new Output("The Maximun Number of Items is Reached!", OutputHandler.USER);		
+		
+		assertEquals(expectedOut, result5);
+	}
+	
+	@Test
+	public void testRenewMoreThanOnce()
+	{
+		OutputHandler testOH = new OutputHandler();
+		String t_user_borrow_success1 = "sun@carleton.ca,9781442616899,1";
+		Output preResult = testOH.returnBook(t_user_borrow_success1);
+		String t_user_borrow_success4 = "yu@carleton.ca,9781442616899,1";
+		Output result3 = testOH.borrow(t_user_borrow_success4);	
+		Output result5 = testOH.renew(t_user_borrow_success4);	
+		Output result6 = testOH.renew(t_user_borrow_success4);	
+		
+		Output expectedOut = new Output("Renewed Item More Than Once for the Same Loan!", OutputHandler.USER);		
+		
+		assertEquals(expectedOut, result6);
+	}
+	
+	@Test
+	public void testRenewOutstandingFees()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Outstanding Fee Exists!", OutputHandler.USER);
+		Output result = testOH.renew(t_user_borrowing);		
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testRenewSuccessful()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Success!", OutputHandler.USER);
+		String t_user_borrow_success4 = "sun@carleton.ca,9781442667181,1";
+		String t_user_borrow_success3 = "sun@carleton.ca,9781611687910,1";
+		Output preResult = testOH.returnBook(t_user_borrow_success3);
+		Output result3 = testOH.renew(t_user_borrow_success4);	
+		
+		assertEquals(expectedOut, result3);
+	}
 
 }
