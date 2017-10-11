@@ -26,6 +26,15 @@ public class UserTest {
 	@Parameter(3)
 	public String t_user_not_email = "invalid_input, password";
 	
+	@Parameter(5)
+	public String t_user_delete_fees = "zhibo@carleton.ca";	
+	
+	@Parameter(5)
+	public String t_user_delete_notexist = "mathieu@carleton.ca";
+	
+	@Parameter(6)
+	public String t_user_delete_success = "yu@carleton.ca";
+	
 	@Test
 	public void testUserExists() 
 	{
@@ -65,6 +74,50 @@ public class UserTest {
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("Your input should in this format:'username,password'", OutputHandler.CREATEUSER);
 		Output result = testOH.createUser(t_user_not_email);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testZRemoveNonExistant()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("The User Does Not Exist!", OutputHandler.DELETEUSER);
+		Output result = testOH.deleteUser(t_user_delete_notexist);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testZRemoveActiveLoan()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Active Loan Exists!", OutputHandler.CLERK);
+		Output preResult = testOH.payFine("zhibo@carleton.ca");
+		Output preResult2 = testOH.borrow("zhibo@carleton.ca,9781442668584,1");
+		Output result = testOH.deleteUser(t_user_delete_fees);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testZRemoveOutstandingFees()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Outstanding Fee Exists!", OutputHandler.CLERK);
+		String t_user_borrowing = "zhibo@carleton.ca,9781442668584,1";
+		Output preResult = testOH.returnBook(t_user_borrowing);
+		Output result = testOH.deleteUser(t_user_delete_fees);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testZRemoveSuccessful()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Success!", OutputHandler.CLERK);
+		Output result = testOH.deleteUser(t_user_delete_success);
 		
 		assertEquals(expectedOut, result);
 	}
