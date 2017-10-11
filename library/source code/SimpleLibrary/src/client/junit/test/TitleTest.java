@@ -18,6 +18,14 @@ public class TitleTest {
 	public String t_ISBN_missing = "8888888888888";	//missing title
 	@Parameter(3)
 	public String t_ISBN_short = "888888888888, This ISBN is too short";	//12 numbers instead of 13
+	@Parameter(4)
+	public String t_ISBN_loaned = "9781442668584, By the grace of God";		//loaned by Zhibo
+	@Parameter(5)	
+	public String t_ISBN_delete_fail = "9781442616899";
+	@Parameter(6)
+	public String t_ISBN_delete_loaned = "9781442668584";		//loaned by Zhibo
+	@Parameter(7)
+	public String t_ISBN_delete_success = "3662233554434";
 	
 	public TitleTest()
 	{
@@ -25,7 +33,7 @@ public class TitleTest {
 	}
 	
 	@Test
-	public void testISBNExists()
+	public void testAISBNExists()
 	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("The Title Already Exists!", OutputHandler.CLERK);
@@ -60,6 +68,36 @@ public class TitleTest {
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("Success!", OutputHandler.CLERK);
 		Output result = testOH.createTitle(t_ISBN_success);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testRemoveNonExistant()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("The Title Does Not Exist!", OutputHandler.CLERK);
+		Output result = testOH.deleteTitle(t_ISBN_delete_success);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testRemoveLoaned()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Active Loan Exists!", OutputHandler.CLERK);
+		Output result = testOH.deleteTitle(t_ISBN_delete_loaned);
+		
+		assertEquals(expectedOut, result);
+	}
+	
+	@Test
+	public void testRemoveSuccessful()
+	{
+		OutputHandler testOH = new OutputHandler();
+		Output expectedOut = new Output("Success!", OutputHandler.CLERK);
+		Output result = testOH.deleteTitle(t_ISBN_delete_fail);
 		
 		assertEquals(expectedOut, result);
 	}

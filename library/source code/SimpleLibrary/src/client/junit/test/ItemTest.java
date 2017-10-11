@@ -22,6 +22,16 @@ public class ItemTest {
 	@Parameter(3)
 	public String t_ISBN_loaned = "9781442668584";		//loaned by Zhibo
 	
+	@Parameter(4)
+	public String t_ISBN_delete_notexist = "5558558558543,1";	//does not exist
+	
+	@Parameter(5)
+	public String t_ISBN_delete_loaned = "9781442668584,1";		//loaned by Zhibo
+	
+	@Parameter(6)
+	public String t_ISBN_delete_exists = "9781442667181,1"; 	//title already exists
+	
+	
 	
 	@Test
 	public void testISBNExists() {
@@ -57,7 +67,7 @@ public class ItemTest {
 	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("The Item Does Not Exist!", OutputHandler.CLERK);
-		Output result = testOH.createItem(t_ISBN_notexist);
+		Output result = testOH.deleteItem(t_ISBN_delete_notexist);
 		
 		assertEquals(expectedOut, result);
 	}
@@ -67,7 +77,7 @@ public class ItemTest {
 	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("Active Loan Exists!", OutputHandler.CLERK);
-		Output result = testOH.createItem(t_ISBN_loaned);
+		Output result = testOH.deleteItem(t_ISBN_delete_loaned);
 		
 		assertEquals(expectedOut, result);
 	}
@@ -77,7 +87,7 @@ public class ItemTest {
 	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("Success!", OutputHandler.CLERK);
-		Output result = testOH.createItem(t_ISBN_loaned);
+		Output result = testOH.deleteItem(t_ISBN_delete_exists);
 		
 		assertEquals(expectedOut, result);
 	}
