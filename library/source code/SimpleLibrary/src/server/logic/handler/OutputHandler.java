@@ -358,4 +358,10 @@ public class OutputHandler {
 			}
 		return isNumber;
 	}
+	
+
+	public Output monitorSystem() {
+		Output output=new Output("",0);
+		return output;
+	}
 }
