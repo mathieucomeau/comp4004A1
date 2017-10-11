@@ -5,6 +5,7 @@ import java.util.List;
 
 import server.logic.handler.model.Output;
 import server.logic.model.Title;
+import server.logic.model.User;
 import server.logic.tables.FeeTable;
 import server.logic.tables.ItemTable;
 import server.logic.tables.LoanTable;
@@ -362,6 +363,28 @@ public class OutputHandler {
 
 	public Output monitorSystem() {
 		Output output=new Output("",0);
+		List<Title> titleList = TitleTable.getInstance().getTitleTable();
+		List<User> userList = UserTable.getInstance().getUserTable();
+		
+		String outStr = "";
+		
+		outStr += "ALL BOOK TITLES: \n";
+		for(int i = 0; i < titleList.size(); i++)
+		{
+			outStr += titleList.get(i).getBooktitle();
+			outStr += "\n";
+		}
+		
+		outStr += "\n";
+		outStr += "ALL USERS: \n";
+		for(int i = 0; i < userList.size(); i++)
+		{
+			outStr += userList.get(i).getUsername();
+			outStr += "\n";
+		}
+		
+		output.setOutput(outStr);
+		output.setState(CLERK);
 		return output;
 	}
 }
