@@ -1,3 +1,10 @@
+/*
+ * ItemTest class
+ * Mathieu Comeau Oct 10 2017
+ * 
+ * This is a UNIT TEST class that tests the functionalities related to librarians dealing with items
+ */
+
 package client.junit.test;
 
 import static org.junit.Assert.*;
@@ -26,13 +33,13 @@ public class ItemTest {
 	public String t_ISBN_delete_notexist = "5558558558543,1";	//does not exist
 	
 	@Parameter(5)
-	public String t_ISBN_delete_loaned = "9781442668584,1";		//loaned by Zhibo
+	public String t_ISBN_delete_loaned = "9781442616899,1";		//loaned by Sun
 	
 	@Parameter(6)
-	public String t_ISBN_delete_exists = "9781442667181,1"; 	//title already exists
+	public String t_ISBN_delete_exists = "9781611687910,1"; 	//title already exists
 	
 	
-	
+	//Test creating an item that exists already
 	@Test
 	public void testISBNExists() {
 		OutputHandler testOH = new OutputHandler();
@@ -42,6 +49,7 @@ public class ItemTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing invalid input for an item
 	@Test
 	public void testISBNInvalid()
 	{
@@ -52,6 +60,7 @@ public class ItemTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing creating of an item for a non-existing title
 	@Test
 	public void testISBNNotExists()
 	{
@@ -62,6 +71,7 @@ public class ItemTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing removal of non-existant item
 	@Test
 	public void testRemoveNonExistant()
 	{
@@ -72,6 +82,7 @@ public class ItemTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing removal of item that is being loaned
 	@Test
 	public void testRemoveLoaned()
 	{
@@ -82,6 +93,7 @@ public class ItemTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing successful removal of item
 	@Test
 	public void testRemoveSuccessful()
 	{

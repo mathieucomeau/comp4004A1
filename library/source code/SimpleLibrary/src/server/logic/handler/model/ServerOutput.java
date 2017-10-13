@@ -21,5 +21,10 @@ public class ServerOutput {
 		this.state = state;
 	}
 	
-
+	@Override
+	public boolean equals(Object other)
+	{
+		ServerOutput otherOut = (ServerOutput) other;
+		return (this.output.equals(otherOut.output) && this.state == otherOut.state);
+	}
 }

@@ -20,6 +20,7 @@ public class InputHandler {
     public static final int PAYFINE=13;
     public static final int CLERKLOGIN=14;
     public static final int USERLOGIN=15;
+    public static final int MONITORSYSTEM=16;
     
     OutputHandler outputHandler=new OutputHandler();
 
@@ -93,6 +94,11 @@ public class InputHandler {
 	            	state=DELETEITEM;
 	            	oo.setOutput(output);
 		            oo.setState(state);
+	            }else if (input.equalsIgnoreCase("monitor system")) {
+		            	output = "Monitoring System";
+		            	state=MONITORSYSTEM;
+		            	oo.setOutput(output);
+			            oo.setState(state);
 	            }else if(input.equalsIgnoreCase("log out")){
 	            	output = "Successfully Log Out!";
 	                state = WAITING;
@@ -250,6 +256,25 @@ public class InputHandler {
 		            oo.setState(state);
 	        	}else{
 	        		o=outputHandler.deleteItem(input);
+	        		output=o.getOutput();
+	        		state=o.getState();
+	        		oo.setOutput(output);
+		            oo.setState(state);
+	        	}
+	        }
+	        else if(state==MONITORSYSTEM){
+	        	if(input.equalsIgnoreCase("log out")){
+	            	output = "Successfully Log Out!";
+	                state = WAITING;
+	                oo.setOutput(output);
+		            oo.setState(state);
+	        	}else if(input.equalsIgnoreCase("main menu")){
+	        		output = "What can I do for you?Menu:Create User/Title/Item,Delete User/Title/Item.";
+	                state = CLERK;
+	                oo.setOutput(output);
+		            oo.setState(state);
+	        	}else{	        		
+	        		o=outputHandler.monitorSystem();
 	        		output=o.getOutput();
 	        		state=o.getState();
 	        		oo.setOutput(output);

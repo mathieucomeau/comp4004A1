@@ -1,3 +1,11 @@
+/*
+ * LoanTest class
+ * Mathieu Comeau Oct 10 2017
+ * 
+ * This is a UNIT TEST class that tests the functionalities related to librarians dealing with loaning/returning books
+ */
+
+
 package client.junit.test;
 
 import static org.junit.Assert.*;
@@ -20,9 +28,12 @@ public class LoanTest {
 	public String t_user_notexists = "user@not.exists,9781442668584,1";
 	
 	@Parameter(3)
-	public String t_user_notbook = "yu@carleton.ca,9781442668584,1";
+	public String t_user_notbook = "yu@carleton.ca,9781611687910,1";
 	
+	@Parameter(4)
+	public String t_user_borrowing2 = "zhibo@carleton.ca,9781442616899,1";
 	
+	//testing a user returning a book who does not have a loan outstanding
 	@Test
 	public void testReturnNoLoan() 
 	{
@@ -33,37 +44,43 @@ public class LoanTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing a user who successfully returns a borrowed book
 	@Test
 	public void testReturnBorrowing() 
 	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("Success!", OutputHandler.USER);
-		Output result = testOH.returnBook(t_user_borrowing);	
+		Output preResult = testOH.borrow("kevin@carleton.ca,9781442667181,1");		
+		Output result = testOH.returnBook("kevin@carleton.ca,9781442667181,1");	
 		
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing a user trying to borrow a book that's already been lent out
 	@Test
 	public void testBorrowNotAvailable()
 	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("The Item is Not Available!", OutputHandler.USER);
 		Output result = testOH.borrow(t_user_notbook);	
-		Output result2 = testOH.borrow(t_user_notbook);	
 		
-		assertEquals(expectedOut, result2);
+		assertEquals(expectedOut, result);
 	}
 	
+	//testing a user who tries to borrow but has outstanding fees
 	@Test
 	public void testBorrowAOutstandingFees()
 	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("Outstanding Fee Exists!", OutputHandler.USER);
-		Output result = testOH.borrow(t_user_borrowing);	
+		//Output preresult = testOH.borrow(t_user_borrowing2);	
+		Output result = testOH.borrow("zhibo@carleton.ca,9781317594277,1");	
+		//Output postresult = testOH.returnBook(t_user_borrowing2);
 		
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing a user trying to borrow from a user who does not exist
 	@Test
 	public void testBorrowUserNotExists()
 	{
@@ -74,8 +91,7 @@ public class LoanTest {
 		assertEquals(expectedOut, result);
 	}
 	
-	
-	
+	//testing a user successfully borrowing a book
 	@Test
 	public void testBorrowSuccess()
 	{
@@ -89,6 +105,7 @@ public class LoanTest {
 		
 	}
 	
+	//testing a user trying to borrow more books than the limit allows
 	@Test
 	public void testBorrowLimit()
 	{
@@ -104,17 +121,18 @@ public class LoanTest {
 		
 		String t_user_borrow_success4 = "sun@carleton.ca,9781611687910,1";
 		Output result3 = testOH.borrow(t_user_borrow_success4);		
-		
-		String t_user_borrow_success3 = "sun@carleton.ca,9781442668584,1";
+				
+		String t_user_borrow_success3 = "sun@carleton.ca,9781317594277,1";
 		Output result2 = testOH.borrow(t_user_borrow_success3);	
 		
-		
+		Output postresult = testOH.returnBook(t_user_borrow_success3);		
 		
 		Output expectedOut = new Output("The Maximun Number of Items is Reached!", OutputHandler.USER);		
 		
 		assertEquals(expectedOut, result2);
 	}
 	
+	//testing the renewal of a loan that does not exist
 	@Test
 	public void testRenewLoanNotExist()
 	{
@@ -125,6 +143,7 @@ public class LoanTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing a user trying to borrow over the limit of books
 	@Test
 	public void testRenewBookLimit()
 	{
@@ -153,6 +172,7 @@ public class LoanTest {
 		assertEquals(expectedOut, result5);
 	}
 	
+	//testing a user trying to renew a book more than once
 	@Test
 	public void testRenewMoreThanOnce()
 	{
@@ -169,6 +189,7 @@ public class LoanTest {
 		assertEquals(expectedOut, result6);
 	}
 	
+	//testing a user who has outstanding fees trying to renew
 	@Test
 	public void testRenewOutstandingFees()
 	{
@@ -179,6 +200,7 @@ public class LoanTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing the successful renewal of a book
 	@Test
 	public void testRenewSuccessful()
 	{

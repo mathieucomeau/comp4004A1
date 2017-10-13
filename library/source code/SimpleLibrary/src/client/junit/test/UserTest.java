@@ -1,3 +1,11 @@
+/*
+ * UserTest class
+ * Mathieu Comeau Oct 10 2017
+ * 
+ * This is a UNIT TEST class that tests the functionalities related to librarians dealing with user accounts
+ */
+
+
 package client.junit.test;
 
 import static org.junit.Assert.*;
@@ -26,15 +34,16 @@ public class UserTest {
 	@Parameter(3)
 	public String t_user_not_email = "invalid_input, password";
 	
-	@Parameter(5)
+	@Parameter(4)
 	public String t_user_delete_fees = "zhibo@carleton.ca";	
 	
 	@Parameter(5)
 	public String t_user_delete_notexist = "mathieu@carleton.ca";
 	
 	@Parameter(6)
-	public String t_user_delete_success = "yu@carleton.ca";
+	public String t_user_delete_success = "mathieu@carleton.ca";
 	
+	//testing creating a user that already has an account
 	@Test
 	public void testUserExists() 
 	{
@@ -45,19 +54,21 @@ public class UserTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing creating a new user who does not yet exist in the system
 	@Test
 	public void testUserNotExists() 
 	{
 		OutputHandler testOH = new OutputHandler();
-		//Output expectedOut = new Output("Success!", OutputHandler.CLERK);
+		Output expectedOut = new Output("Success!", OutputHandler.CLERK);
 		Output result = testOH.createUser(t_user_notexist);
-		List<User> t_table = UserTable.getInstance().getUserTable();
+		//List<User> t_table = UserTable.getInstance().getUserTable();
 		
 		//test the user ID to see if it's correct
-		assertEquals("mathieu@carleton.ca", t_table.get(t_table.size() - 1).getUsername());
+		assertEquals(expectedOut, result);
 		
 	}
 	
+	//testing invalid input for the user
 	@Test
 	public void testUserInvalid() 
 	{
@@ -68,6 +79,7 @@ public class UserTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing invalid input for the user
 	@Test
 	public void testUserNotEmail() 
 	{
@@ -78,6 +90,7 @@ public class UserTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing removal of non-existing user
 	@Test
 	public void testZRemoveNonExistant()
 	{
@@ -88,18 +101,22 @@ public class UserTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing removal of a user with an active loan
 	@Test
 	public void testZRemoveActiveLoan()
 	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("Active Loan Exists!", OutputHandler.CLERK);
-		Output preResult = testOH.payFine("zhibo@carleton.ca");
-		Output preResult2 = testOH.borrow("zhibo@carleton.ca,9781442668584,1");
-		Output result = testOH.deleteUser(t_user_delete_fees);
+		Output preResult = testOH.borrow("mathieu@carleton.ca,9781442616899,1");
+		Output preResult2 = testOH.borrow("mathieu@carleton.ca,9781442667181,1");
+		Output result = testOH.deleteUser("mathieu@carleton.ca");
+		Output postResult = testOH.returnBook("mathieu@carleton.ca,9781442616899,1");
+		Output postResult2 = testOH.returnBook("mathieu@carleton.ca,9781442667181,1");
 		
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing removal of user that has outstanding fees
 	@Test
 	public void testZRemoveOutstandingFees()
 	{
@@ -112,14 +129,16 @@ public class UserTest {
 		assertEquals(expectedOut, result);
 	}
 	
+	//testing successful removal of user
 	@Test
-	public void testZRemoveSuccessful()
+	public void testRemoveSuccessful()
 	{
 		OutputHandler testOH = new OutputHandler();
 		Output expectedOut = new Output("Success!", OutputHandler.CLERK);
+		Output result1 = testOH.createUser(t_user_notexist);
 		Output result = testOH.deleteUser(t_user_delete_success);
 		
 		assertEquals(expectedOut, result);
 	}
-
+	
 }

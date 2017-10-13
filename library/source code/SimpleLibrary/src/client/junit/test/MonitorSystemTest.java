@@ -1,3 +1,11 @@
+/*
+ * MonitorTest class
+ * Mathieu Comeau Oct 10 2017
+ * 
+ * This is a UNIT TEST class that tests the functionalities related to librarians monitoring the system
+ */
+
+
 package client.junit.test;
 
 import static org.junit.Assert.*;
@@ -15,6 +23,7 @@ import server.logic.tables.UserTable;
 
 public class MonitorSystemTest {
 
+	//testing a librarian monitoring the system
 	@Test
 	public void testMonitorSystem() {
 		OutputHandler testOH = new OutputHandler();

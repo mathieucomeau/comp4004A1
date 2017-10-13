@@ -139,10 +139,10 @@ public class FeeTable {
 		}else{
 			fee=0;
 		}
-		if(oloan==false){
+		/*if(oloan==false){
 			result="Borrowing Items Exist";
 			logger.info(String.format("Operation:Pay Fine;Fee Info:[%d,%d];State:Fail;Reason:Borrowing Items Exist.", i,fee));
-		}else{
+		}else{*/
 			if(fee == 0)
 			{
 				result = "No fees to pay";
@@ -155,7 +155,7 @@ public class FeeTable {
 				result="success";
 				logger.info(String.format("Operation:Pay Fine;Fee Info:[%d,%d];State:Success", i,fee));
 			}
-		}
+		//}
 		return result;
 	}
 	
